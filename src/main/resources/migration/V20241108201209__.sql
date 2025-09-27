@@ -169,3 +169,10 @@ CREATE TABLE registration.keyword_to_places
     place_id            UUID not null,
     keyword_id          UUID not null
 )
+
+CREATE TABLE registration.placeKeyword
+(
+    id                  UUID primary key not null,
+    place_id            UUID not null,
+    keyword_id          UUID not null
+)

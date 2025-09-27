@@ -1,6 +1,5 @@
 package com.registration.entity.placefinder;
 
-
 import com.registration.constants.DatabaseConstants;
 import com.registration.request.KeywordsRequest;
 import jakarta.persistence.*;
@@ -24,17 +23,18 @@ public class Keywords {
     @GeneratedValue(generator = "UUIDGenerator")
     private UUID id;
 
+    @Column(name = "name")
     private String name;
 
+    // Removed the incorrect @ManyToOne relationship with PlaceEntity
+    // Keywords should not directly reference places - that's handled by PlaceKeyword junction table
 
     public Keywords(KeywordsRequest request) {
         id = request.getId();
         name = request.getName();
-
     }
 
     public KeywordsRequest toKeywordsRequest() {
         return new KeywordsRequest(id, name);
-
     }
 }

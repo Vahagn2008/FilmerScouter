@@ -69,9 +69,6 @@ public class PlaceController {
         List<PlaceRequest> results = placeService.searchPlacesByKeywords(keywords);
         return ResponseEntity.ok(results);
     }
-
-//    @GetMapping // This was commented out in your original code
-//    public PlaceRequest getPlacesByKeyWords(@RequestParam List<String> keywords){
-//        return placeService.getPlacesByKeyWords(keywords);
-//    }
 }
+
+
